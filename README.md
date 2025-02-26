@@ -10,6 +10,20 @@ Tools like GitHub Actions, GitLab CI and others make git scraping adaptable to d
 
 This template includes a sample workflow to demonstrate the core git scraping capabilities. Read on to learn how to customize it!
 
+## Modifications
+
+The original scraper was designed to extract the main headline using:
+
+"""
+soup.find("a", class_="frontpage-link")
+"""
+
+Focused on capturing the first headline on the left side in the featured section on the front home page. The scraper was modified to correctly extract this specific article by adjusting the class name in the search criteria.
+
+"""
+soup.find("a", class_="frontpage-link standard-link")
+"""
+
 ## Overview
 
 The workflow defined in `.github/workflows/scrape.yaml` runs on a defined schedule to:
@@ -24,7 +38,7 @@ The workflow defined in `.github/workflows/scrape.yaml` runs on a defined schedu
 
 The workflow schedule is configured with [cron syntax](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule) to run:
 
-- Every day at 8PM UTC
+- Every day at 12:30 PM UTC
 
 This once-daily scraping is a good rule-of-thumb, as it is generally respectful of the target website, as it does not contribute to any measurable burden to the site's resources.
 
