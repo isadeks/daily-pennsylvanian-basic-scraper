@@ -14,15 +14,15 @@ This template includes a sample workflow to demonstrate the core git scraping ca
 
 The original scraper was designed to extract the main headline using:
 
-"""
+```
 soup.find("a", class_="frontpage-link")
-"""
+```
 
 Focused on capturing the first headline on the left side in the featured section on the front home page. The scraper was modified to correctly extract this specific article by adjusting the class name in the search criteria.
 
-"""
+```
 soup.find("a", class_="frontpage-link standard-link")
-"""
+```
 
 ## Overview
 
